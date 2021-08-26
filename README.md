@@ -1,5 +1,5 @@
 # semico
-Powerful Word generation
+Powerful Word generation service
 
 ## Demo 
 Link https://semico.azurewebsites.net/
@@ -7,19 +7,20 @@ Link https://semico.azurewebsites.net/
 ## Tags
 The template is a document (docx) created in Microsoft Word or other software.
 
-Semico supports the following  structures:
+Semico supports following features:
 * Simple tags
 * Loops
 * Conditions
 * Table rows
 * Table columns
 * Bullets
+* Convert to PDF
 
 ### Simple tags
 
 |Template (docx)|Data (json)|Document (docx)|
 |---------------|-----------|---------------|
-|Hi {name}| ```{"name": "John Doe" }```|Hi John Doe|
+|Hi {name}| ``` {"name": "John Doe" }```|Hi John Doe|
 
 ### Loops
 
@@ -51,7 +52,7 @@ Semico supports the following  structures:
 
 |Template (docx)|Data (json)|Document (docx)|
 |---------------|-----------|---------------|
-|{bl%list} {item1} {bl/list}| ```{"list": [{"item1": "aculis"},{"item1": "faucibus"},{"item1": "sit"}]}```| <ul> <li>aculis </li>  <li>faucibus </li> </ul>|
+|{bl%list} {item1} {bl/list}| ```{"list": [{"item1": "aculis"},{"item1": "faucibus"},{"item1": "sit"}]}```| <ul> <li>aculis </li>  <li>faucibus </li>  <li>sit </li> </ul>|
 
 
 
@@ -94,6 +95,23 @@ This endpoint is used to generate document.
 |-----------|-----------|-------------|--------|
 |template|YES|	A base64 representation of a Word document (docx)|UEsDBBQABgAIA....|
 |data|YES|	A base64 representation of a JSON document|ew0KICAgICJ0Z....|
+|options| NO | Additional options| |
+
+##### Options
+```JSON
+ "options": {
+        "convertToPdf": true,
+        "pdfOptions": {
+            "additionalMetadata": "More metadata",
+            "author": "Nefia",
+            "producer": "Semico",
+            "subject": "Semico client",
+            "title": "PDF generation",
+            "application": "Semico Web"
+        }
+    }
+
+```
 
 ### Postman
 
