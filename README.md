@@ -67,7 +67,7 @@ https://nefiavt.azure-api.net
 
 Semico uses subscription keys to enable access to the API content and perform requests.
 
-You can register a new Semico subscription key by contacting us at ....
+You can register a new Semico subscription key by [contacting](https://semico.azurewebsites.net/Contact) us
 
 Semico expects for the subscription key to be included in all API requests to the server in the header of the request that looks like the following:
 
@@ -98,7 +98,7 @@ This endpoint is used to generate document.
 |options| NO | Additional options| |
 
 ##### Options
-```JSON
+```json
  "options": {
         "convertToPdf": true,
         "pdfOptions": {
