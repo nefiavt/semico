@@ -1,8 +1,7 @@
 # semico
 Powerful Word generation service
 
-## Demo 
-Link https://semico.azurewebsites.net/
+Demo link https://semico.azurewebsites.net/
 
 ## Tags
 The template is a document (docx) created in Microsoft Word or other software.
@@ -14,6 +13,8 @@ Semico supports following features:
 * Table rows
 * Table columns
 * Bullets
+* Numbering
+* Images
 * Convert to PDF
 
 ### Simple tags
@@ -54,7 +55,17 @@ Semico supports following features:
 |---------------|-----------|---------------|
 |{bl%list} {item1} {bl/list}| ```{"list": [{"item1": "aculis"},{"item1": "faucibus"},{"item1": "sit"}]}```| <ul> <li>aculis </li>  <li>faucibus </li>  <li>sit </li> </ul>|
 
+### Numbering
 
+|Template (docx)|Data (json)|Document (docx)|
+|---------------|-----------|---------------|
+|{nl%list} {item1} {nl/list}| ```{"list": [{"item1": "aculis"},{"item1": "faucibus"},{"item1": "sit"}]}```| <ol> <li>aculis </li>  <li>faucibus </li>  <li>sit </li> </ol>|
+
+### Images
+
+|Template (docx)|Data (json)|Document (docx)|
+|---------------|-----------|---------------|
+|{smile}| ```{"smile": "image:iVBORw0KG..."```| <img src="https://semico.azurewebsites.net/img/smile.png" />  |
 
 ## Testing
 You can use our API to access Semico contents.
